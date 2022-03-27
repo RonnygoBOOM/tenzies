@@ -1,11 +1,29 @@
 import React from 'react';
+import Die from '../components/DieComponent';
 
 function Main() {
+    const value = getRandomInt(6)
+    function getRandomInt(max) {
+        return (Math.floor(Math.random() * max))+1;
+        }
+        console.log()
     return (
         <>
         <div className="container">
-            <div className="card">
-                <h1>Hello World</h1>
+            <div className="main">
+                <div className="dice-container">
+                    <Die value={value}/>
+                    <Die value={value}/>
+                    <Die value={value}/>
+                    <Die value={value}/>
+                    <Die value={value}/>
+                    <Die value={value}/>
+                    <Die value={value}/>
+                    <Die value={value}/>
+                    <Die value={value}/>
+                    <Die value={value}/>
+                </div>
+
             </div>
         </div>
         </>
