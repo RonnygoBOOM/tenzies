@@ -2,7 +2,13 @@ import React from 'react';
 
 function Main() {
     return (
-        <h1>Hello World</h1>
+        <>
+        <div className="container">
+            <div className="card">
+                <h1>Hello World</h1>
+            </div>
+        </div>
+        </>
     )
 }
 

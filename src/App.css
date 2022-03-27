@@ -1,8 +1,23 @@
 * {
   box-sizing: border-box;
+  
 }
 
 body {
   margin: 0;
+  background-color: #F6E9DF;
 }
 
+.container {
+background-color: #0B2434;
+margin: 5em;
+padding: 2em;
+}
+
+.card {
+  background-color: white;
+  border-radius: 1em;
+  margin: 2em;
+  padding: 1em;
+  height: 400px;
+}
