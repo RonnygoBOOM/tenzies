@@ -9,6 +9,8 @@ body {
 }
 
 .container {
+display: flex;
+justify-content: center;
 background-color: #0B2434;
 margin: 5em;
 padding: 2em;
@@ -50,4 +52,17 @@ gap: .5em;
   align-items: center;
   margin: 1em;
   font-size: 1.2rem;
+}
+
+.roll {
+  margin-top: 1em;
+  background-color: #5035FF;
+  font-size: 1.5rem;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 5em;
+  height: 2.5em;
+  font-family: 'Karla', sans-serif;
+  cursor: pointer;
 }
