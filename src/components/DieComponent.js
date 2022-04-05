@@ -7,7 +7,7 @@ const styles = {
 }
     return (
         <>
-            <div className="die" style={styles} onClick={() => props.handleHoldValue}>
+            <div className="die" style={styles} onClick={props.holdDice}>
                 <h2>{props.value}</h2>
             </div>
         </>

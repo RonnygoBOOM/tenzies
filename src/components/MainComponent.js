@@ -11,36 +11,55 @@ function Main() {
 
     const [diceArray, setDiceArray] = React.useState(allNewDice())
 
-    function rollDice() {
-        setDiceArray(allNewDice())
+    function generateNewDie() {
+        return {
+        value: Math.ceil(Math.random() * 6),
+        isHeld: false,
+        id: nanoid()
+        }
     }
 
     function allNewDice() {
         const newDice = []
         for (let i = 0; i <= 9; i++) {
-            newDice.push(
-                {
-                value: Math.ceil(Math.random() * 6),
-                isHeld: false,
-                id: nanoid()
-            }
-                )
+            newDice.push(generateNewDie())
         }
         return (
             newDice
         )
     }
 
-    function handleHoldValue() {
-
+    function rollDice() {
+            setDiceArray(oldDice => oldDice.map(die => {
+                return die.isHeld === false ? 
+                generateNewDie()
+                :
+                die
+            }
+            ))
     }
 
-    const diceElements = diceArray.map(die => <Die key={die.id} isHeld={die.isHeld} value={die.value} handleHoldValue = {handleHoldValue}/>)
+    function holdDice(id) {
+        console.log(id)
+        setDiceArray(oldDice => oldDice.map(die => {
+            return die.id === id ? 
+            {...die,
+            isHeld: !die.isHeld} 
+            :
+            die
+        }
+        ))
+    }
+
+
+    const diceElements = diceArray.map(die => <Die key={die.id} isHeld={die.isHeld} value={die.value} holdDice = {() => holdDice(die.id)}/>)
 
     return (
         <>
         <div className="container">
             <div className="main">
+            <h1 className="title">Tenzies</h1>
+            <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
                 <div className="dice-container">
                     {diceElements}
                 </div>
