@@ -4,7 +4,7 @@ import {nanoid} from 'nanoid';
 import Confetti from 'react-confetti';
 
 function Main() {
-    const value = getRandomInt(6)
+    // const value = getRandomInt(6)
     function getRandomInt(max) {
         return (Math.floor(Math.random() * max))+1;
         }
@@ -20,7 +20,6 @@ function Main() {
         const firstValue = diceArray[0].value
         const allMatch = diceArray.every(die => die.value === firstValue)
         allHeld && allMatch && setTenzies(true) 
-        tenzies && console.log("You Win!")
     }, [diceArray])
 
 
