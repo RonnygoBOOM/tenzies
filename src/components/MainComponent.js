@@ -5,10 +5,10 @@ import Confetti from 'react-confetti';
 
 function Main() {
     // const value = getRandomInt(6)
-    function getRandomInt(max) {
-        return (Math.floor(Math.random() * max))+1;
-        }
-        console.log()
+    // function getRandomInt(max) {
+    //     return (Math.floor(Math.random() * max))+1;
+    //     }
+    //     console.log()
 
     const [diceArray, setDiceArray] = React.useState(allNewDice())
 
